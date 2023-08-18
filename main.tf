@@ -1,12 +1,15 @@
-# Configure the AWS Provider
-provider "aws" {
-  region = "us-east-1"
+terraform {
+  required_providers {
+    aws = {
+      source  = "hashicorp/aws"
+      version = "~> 5.0"
+    }
+  }
 }
 
-resource "aws_instance" "myin" {
-  ami           = "ami-08a52ddb321b32a8c"
-  instance_type = "t2.micro"
-  tags = {
-    Name = "Test-Instance"
-  }
+# Configure the AWS Provider
+provider "aws" {
+  region     = "us-east-1"
+  access_key = "AKIA4PWKKJG7E5LJIAH7"
+  secret_key = "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"
 }
